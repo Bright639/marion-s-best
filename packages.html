@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages - Spike Salon Barbershop & Spa</title>
+    <meta name="description" content="Explore our exclusive beauty and grooming packages designed for the ultimate salon experience. Special pricing for combined services.">
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo">
+                    <span class="nav__logo-text">SPIKE SALON</span>
+                    <span class="nav__logo-tagline">Barbershop & Spa</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="packages.html" class="nav__link nav__link--active">Packages</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="faq.html" class="nav__link">FAQs</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav__actions">
+                <a href="contact.html" class="btn btn--primary">Book Now</a>
+                <button class="nav__toggle" id="nav-toggle">
+                    <span class="nav__toggle-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <h1 class="page-header__title">Our Packages</h1>
+                    <p class="page-header__subtitle">Curated combinations of our best services for the ultimate experience</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Policy Banner -->
+        <section class="policy-banner">
+            <div class="container">
+                <div class="policy-banner__content">
+                    <svg class="policy-banner__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div class="policy-banner__text">
+                        <p><strong>Package Policy:</strong> All packages require a 50% deposit to secure your booking. 
+                        Sessions can be split across multiple visits within 30 days. See our <a href="faq.html">FAQs</a> for full policy details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages -->
+        <section class="packages section">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Choose Your Perfect Package</h2>
+                    <p class="section__subtitle">Save money and time with our carefully curated service combinations</p>
+                </div>
+
+                <div class="packages-grid" id="packages-grid">
+                    <!-- Package cards will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Package Benefits -->
+        <section class="package-benefits section section--alt">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Package Benefits</h2>
+                </div>
+
+                <div class="benefits-grid">
+                    <div class="benefit">
+                        <div class="benefit__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="benefit__title">Save Money</h3>
+                        <p class="benefit__description">Get more value with package pricing that's lower than individual service costs.</p>
+                    </div>
+
+                    <div class="benefit">
+                        <div class="benefit__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="benefit__title">Save Time</h3>
+                        <p class="benefit__description">Complete multiple services in one visit or split across convenient appointments.</p>
+                    </div>
+
+                    <div class="benefit">
+                        <div class="benefit__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="benefit__title">Premium Experience</h3>
+                        <p class="benefit__description">Enjoy a comprehensive transformation with our expertly curated service combinations.</p>
+                    </div>
+
+                    <div class="benefit">
+                        <div class="benefit__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="benefit__title">Flexibility</h3>
+                        <p class="benefit__description">Split package sessions across multiple visits within 30 days to fit your schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta section">
+            <div class="container">
+                <div class="cta__content text-center">
+                    <h2 class="cta__title">Ready for Your Package Experience?</h2>
+                    <p class="cta__subtitle">Book your preferred package today and enjoy the ultimate salon transformation</p>
+                    <div class="cta__actions">
+                        <a href="contact.html" class="btn btn--primary btn--large">Book Package</a>
+                        <a href="tel:+254741097004" class="btn btn--secondary btn--large">
+                            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            Call to Book
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <!-- Footer content will be loaded by JavaScript -->
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5,12 12,5 19,12"></polyline>
+        </svg>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/forms.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <style>
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-8);
+            margin-bottom: var(--space-12);
+        }
+
+        .package-includes {
+            margin: var(--space-4) 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .benefit {
+            text-align: center;
+            padding: var(--space-6);
+        }
+
+        .benefit__icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto var(--space-4);
+            background: var(--brand-accent);
+            border-radius: var(--rounded-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-primary);
+        }
+
+        .benefit__icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .benefit__title {
+            font-size: var(--text-xl);
+            font-weight: var(--font-bold);
+            margin-bottom: var(--space-3);
+            color: var(--brand-dark);
+        }
+
+        .benefit__description {
+            color: var(--color-gray-600);
+            line-height: var(--leading-relaxed);
+        }
+    </style>
+</body>
+</html>

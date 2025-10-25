@@ -1,0 +1,72 @@
+[
+  {
+    "id": "booking-policy",
+    "question": "What is your booking and cancellation policy?",
+    "answer": "Some services require a 50% deposit to secure your appointment. Cancellations must be made at least 24 hours in advance to avoid charges. Late cancellations (less than 24 hours) may result in a 50% charge of the service fee. No-show appointments will be charged the full service fee. Rescheduling is allowed up to 2 hours before your appointment time."
+  },
+  {
+    "id": "deposit-refund",
+    "question": "Are deposits refundable?",
+    "answer": "Deposits are non-refundable but can be applied to rescheduled appointments within 30 days of the original booking date. This policy ensures we can maintain our scheduling integrity while providing flexibility for our clients."
+  },
+  {
+    "id": "payment-methods",
+    "question": "What payment methods do you accept?",
+    "answer": "We accept cash, mobile money (M-Pesa), and bank transfers. For services requiring deposits, payment can be made via M-Pesa to our business number or through bank transfer. We also accept major credit and debit cards."
+  },
+  {
+    "id": "opening-hours",
+    "question": "What are your opening hours?",
+    "answer": "We are open Monday to Saturday from 8:00 AM to 8:00 PM. We are closed on Sundays. Please note that hours may vary during public holidays. We recommend calling ahead to confirm availability for same-day appointments."
+  },
+  {
+    "id": "location-parking",
+    "question": "Where are you located and is parking available?",
+    "answer": "We are located in Kitui Town, directly opposite Kasue Pharmacy. Street parking is available nearby, and we can provide specific directions if needed. The location is easily accessible by public transport and private vehicles."
+  },
+  {
+    "id": "services-for-men",
+    "question": "Do you offer services specifically for men?",
+    "answer": "Absolutely! We have a dedicated barbershop section offering comprehensive men's grooming services including haircuts, traditional shaves, beard trimming, and specialized grooming packages. Our barbers are trained in both traditional and modern techniques."
+  },
+  {
+    "id": "hygiene-safety",
+    "question": "What hygiene and safety measures do you follow?",
+    "answer": "We maintain the highest hygiene standards with sterilized equipment, clean workstations, and professional sanitation practices. All tools are properly disinfected between clients, and we use disposable items where appropriate. Our staff follows strict health and safety protocols."
+  },
+  {
+    "id": "first-time-clients",
+    "question": "What should first-time clients expect?",
+    "answer": "First-time clients will have a consultation to discuss their needs, preferences, and any allergies or skin sensitivities. We'll explain our services, pricing, and policies. New clients often receive a brief tour of our facilities and are introduced to their service provider."
+  },
+  {
+    "id": "group-bookings",
+    "question": "Do you accommodate group bookings and special events?",
+    "answer": "Yes, we love hosting group events such as bridal parties, birthday celebrations, and corporate events. Group bookings require advance notice and may have special pricing. Please contact us directly to discuss your specific needs and availability."
+  },
+  {
+    "id": "gift-certificates",
+    "question": "Do you offer gift certificates or packages?",
+    "answer": "Yes, we offer gift certificates for individual services or complete packages. Gift certificates are valid for 6 months from purchase date and make perfect gifts for birthdays, holidays, or special occasions. They can be purchased in person or by calling our salon."
+  },
+  {
+    "id": "appointment-preparation",
+    "question": "How should I prepare for my appointment?",
+    "answer": "Preparation depends on your service. For facials, avoid exfoliating 24 hours prior. For hair services, come with clean, dry hair unless otherwise instructed. For nail services, remove any existing polish. We'll provide specific preparation instructions when you book."
+  },
+  {
+    "id": "service-duration",
+    "question": "How long do typical services take?",
+    "answer": "Service duration varies: basic haircuts take 45-60 minutes, facials 60-75 minutes, manicures 45 minutes, pedicures 60 minutes, and massages 60-90 minutes. Specialized services like microblading can take 2+ hours. We provide estimated times when booking."
+  },
+  {
+    "id": "skin-allergies",
+    "question": "What if I have allergies or sensitive skin?",
+    "answer": "Please inform us of any allergies or skin sensitivities when booking. We use hypoallergenic products when necessary and can perform patch tests before full treatments. Your safety and comfort are our top priorities, and we'll customize treatments accordingly."
+  },
+  {
+    "id": "maintenance-appointments",
+    "question": "How often should I book maintenance appointments?",
+    "answer": "Maintenance frequency varies by service: haircuts every 4-6 weeks, nail services every 2-3 weeks, facials monthly, lash extension fills every 2-3 weeks, and microblading touch-ups annually. We'll provide personalized recommendations based on your needs."
+  }
+]

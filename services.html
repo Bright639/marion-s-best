@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Spike Salon Barbershop & Spa</title>
+    <meta name="description" content="Explore our comprehensive range of beauty and grooming services including barbershop, salon, nails, spa treatments, and more.">
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo">
+                    <span class="nav__logo-text">SPIKE SALON</span>
+                    <span class="nav__logo-tagline">Barbershop & Spa</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="services.html" class="nav__link nav__link--active">Services</a></li>
+                    <li class="nav__item"><a href="packages.html" class="nav__link">Packages</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="faq.html" class="nav__link">FAQs</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav__actions">
+                <a href="contact.html" class="btn btn--primary">Book Now</a>
+                <button class="nav__toggle" id="nav-toggle">
+                    <span class="nav__toggle-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <h1 class="page-header__title">Our Services</h1>
+                    <p class="page-header__subtitle">Professional beauty and grooming services for everyone</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Policy Banner -->
+        <section class="policy-banner">
+            <div class="container">
+                <div class="policy-banner__content">
+                    <svg class="policy-banner__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div class="policy-banner__text">
+                        <p><strong>Booking Policy:</strong> Some services require a 50% deposit to secure your appointment. 
+                        Cancellations must be made at least 24 hours in advance. See our <a href="faq.html">FAQs</a> for full policy details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services section">
+            <div class="container">
+                <!-- Service Categories Tabs -->
+                <div class="service-tabs">
+                    <div class="service-tabs__nav" id="service-tabs">
+                        <!-- Tabs will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Service Cards -->
+                <div class="service-cards" id="service-cards">
+                    <!-- Service cards will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <!-- Footer content will be loaded by JavaScript -->
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5,12 12,5 19,12"></polyline>
+        </svg>
+    </button>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="booking-modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h3 class="modal__title">Book Service</h3>
+                <button class="modal__close" id="close-booking-modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__body" id="booking-form-container">
+                <!-- Booking form will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/forms.js"></script>
+    <script>
+        // Services page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            loadServicesPage();
+        });
+
+        async function loadServicesPage() {
+            try {
+                const services = await window.DataLoader.getServices();
+                renderServiceTabs(services);
+                renderServiceCards(services);
+                initializeServiceTabs();
+            } catch (error) {
+                console.error('Error loading services:', error);
+            }
+        }
+
+        function renderServiceTabs(services) {
+            const tabsContainer = document.getElementById('service-tabs');
+            const categories = [...new Set(services.map(service => service.category))];
+            
+            let tabsHTML = `<button class="service-tab service-tab--active" data-category="all">All Services</button>`;
+            categories.forEach(category => {
+                tabsHTML += `<button class="service-tab" data-category="${category}">${category}</button>`;
+            });
+            
+            tabsContainer.innerHTML = tabsHTML;
+        }
+
+        function renderServiceCards(services, filterCategory = 'all') {
+            const cardsContainer = document.getElementById('service-cards');
+            const filteredServices = filterCategory === 'all' 
+                ? services 
+                : services.filter(service => service.category === filterCategory);
+            
+            let cardsHTML = '';
+            filteredServices.forEach(service => {
+                cardsHTML += `
+                    <div class="service-card">
+                        <div class="service-card__image">
+                            <img src="${service.image}" alt="${service.name}" loading="lazy">
+                            <div class="service-card__badge">${service.duration}</div>
+                        </div>
+                        <div class="service-card__content">
+                            <h3 class="service-card__title">${service.name}</h3>
+                            <p class="service-card__description">${service.blurb}</p>
+                            <div class="service-card__meta">
+                                <div class="service-card__price">KSH ${service.price.toLocaleString()}</div>
+                                <div class="service-card__payment ${service.paymentType === '50% deposit' ? 'service-card__payment--deposit' : ''}">${service.paymentType}</div>
+                            </div>
+                            <button class="btn btn--primary btn--full-width book-service" data-service-id="${service.id}">Book Now</button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cardsContainer.innerHTML = cardsHTML;
+            
+            // Add event listeners to book buttons
+            const bookButtons = document.querySelectorAll('.book-service');
+            bookButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const serviceId = this.getAttribute('data-service-id');
+                    const service = services.find(s => s.id === serviceId);
+                    openBookingModal(service);
+                });
+            });
+        }
+
+        function initializeServiceTabs() {
+            const tabs = document.querySelectorAll('.service-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', async function() {
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('service-tab--active'));
+                    this.classList.add('service-tab--active');
+                    
+                    // Filter services
+                    const category = this.getAttribute('data-category');
+                    const services = await window.DataLoader.getServices();
+                    renderServiceCards(services, category);
+                });
+            });
+        }
+
+        function openBookingModal(service) {
+            const modal = document.getElementById('booking-modal');
+            const formContainer = document.getElementById('booking-form-container');
+            
+            formContainer.innerHTML = BookingForm.generateForm(service);
+            BookingForm.initialize();
+            
+            modal.classList.add('modal--active');
+            document.body.classList.add('modal-open');
+        }
+
+        // Close modal handlers
+        document.getElementById('close-booking-modal').addEventListener('click', function() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('modal--active');
+            document.body.classList.remove('modal-open');
+        });
+
+        document.querySelector('#booking-modal .modal__overlay').addEventListener('click', function() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('modal--active');
+            document.body.classList.remove('modal-open');
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

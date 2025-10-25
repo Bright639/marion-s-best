@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Spike Salon Barbershop & Spa</title>
+    <meta name="description" content="Stay updated with the latest beauty trends, hair care tips, and salon insights from our expert team at Spike Salon.">
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo">
+                    <span class="nav__logo-text">SPIKE SALON</span>
+                    <span class="nav__logo-tagline">Barbershop & Spa</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="packages.html" class="nav__link">Packages</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link nav__link--active">Blog</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="faq.html" class="nav__link">FAQs</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav__actions">
+                <a href="contact.html" class="btn btn--primary">Book Now</a>
+                <button class="nav__toggle" id="nav-toggle">
+                    <span class="nav__toggle-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <h1 class="page-header__title">Our Blog</h1>
+                    <p class="page-header__subtitle">Beauty tips, trends, and insights from our expert team</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts -->
+        <section class="blog section">
+            <div class="container">
+                <div class="blog-posts" id="blog-posts">
+                    <!-- Blog posts will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <!-- Footer content will be loaded by JavaScript -->
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5,12 12,5 19,12"></polyline>
+        </svg>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <style>
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .blog-card {
+            background: var(--brand-light);
+            border-radius: var(--rounded-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .blog-card__image {
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .blog-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-card__image img {
+            transform: scale(1.05);
+        }
+
+        .blog-card__content {
+            padding: var(--space-6);
+        }
+
+        .blog-card__meta {
+            display: flex;
+            gap: var(--space-4);
+            margin-bottom: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--color-gray-600);
+        }
+
+        .blog-card__title {
+            margin-bottom: var(--space-3);
+        }
+
+        .blog-card__title a {
+            color: var(--brand-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .blog-card__title a:hover {
+            color: var(--brand-primary);
+        }
+
+        .blog-card__excerpt {
+            color: var(--color-gray-600);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-4);
+        }
+
+        .blog-card__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-bottom: var(--space-4);
+        }
+
+        .blog-card__tag {
+            background: var(--brand-accent);
+            color: var(--brand-primary);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--rounded-full);
+            font-size: var(--text-xs);
+            font-weight: var(--font-medium);
+        }
+    </style>
+</body>
+</html>

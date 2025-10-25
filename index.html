@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spike Salon Barbershop & Spa - Style for Him. Glam for Her</title>
+  <meta name="description" content="Premium barbershop and spa services in Kitui Town. Professional hairdressing, nails, facials, massage, and more. Book your appointment today!">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Spike Salon Barbershop & Spa">
+  <meta property="og:description" content="Style for Him. Glam for Her - Premium salon services in Kitui">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://spikesalon.com">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Spike Salon Barbershop & Spa">
+  <meta name="twitter:description" content="Style for Him. Glam for Her - Premium salon services in Kitui">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Spike Salon Barbershop & Spa",
+    "description": "Premium barbershop and spa services",
+    "url": "https://spikesalon.com",
+    "telephone": "+254741097004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Opposite Kasue Pharmacy",
+      "addressLocality": "Kitui Town",
+      "addressCountry": "Kenya"
+    },
+    "openingHours": "Mo-Sa 08:00-20:00",
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Salon Services",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Hairdressing", "category": "Beauty Services" },
+        { "@type": "Offer", "name": "Barbershop Services", "category": "Grooming" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="nav container" role="navigation" aria-label="Main navigation">
+      <!-- Brand Section -->
+      <div class="nav__brand">
+        <a href="index.html" class="nav__logo" aria-label="Spike Salon Home">
+          <span class="nav__logo-text">SPIKE SALON</span>
+          <span class="nav__logo-tagline">Barbershop & Spa</span>
+        </a>
+      </div>
+
+      <!-- Navigation Menu (for desktop) -->
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list" role="menubar">
+          <li class="nav__item" role="none"><a href="index.html" class="nav__link nav__link--active" role="menuitem">Home</a></li>
+          <li class="nav__item" role="none"><a href="about.html" class="nav__link" role="menuitem">About</a></li>
+          <li class="nav__item" role="none"><a href="services.html" class="nav__link" role="menuitem">Services</a></li>
+          <li class="nav__item" role="none"><a href="packages.html" class="nav__link" role="menuitem">Packages</a></li>
+          <li class="nav__item" role="none"><a href="blog.html" class="nav__link" role="menuitem">Blog</a></li>
+          <li class="nav__item" role="none"><a href="contact.html" class="nav__link" role="menuitem">Contact</a></li>
+          <li class="nav__item" role="none"><a href="faq.html" class="nav__link" role="menuitem">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Navigation Toggle Button (Hamburger Icon) -->
+      <div class="nav__actions">
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+          <span class="nav__toggle-icon"></span>
+        </button>
+        <a href="contact.html" class="btn btn--primary">Book Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Hero Section (Video + lighter overlay for legibility) -->
+    <section class="hero hero--video" style="--hero-image: url('assets/img/hero/spike-hero-fallback.jpg');">
+      <!-- Full-bleed Streamable embed -->
+      <iframe
+        class="hero__video"
+        title="Spike Salon Hero Video"
+        src="https://streamable.com/e/dyrxon?autoplay=1&muted=1&loop=1&controls=0"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <!-- Overlay (lighter, text-friendly) -->
+      <div class="hero__overlay"></div>
+
+      <!-- Hero copy -->
+      <div class="hero__content container">
+        <h1 class="hero__title">
+          Style for Him. <br>
+          <span class="text-accent">Glam for Her</span>
+        </h1>
+        <p class="hero__subtitle">
+          Premium barbershop and spa services in the heart of Kitui Town. 
+          Experience professional grooming and beauty treatments in our modern facility.
+        </p>
+        <div class="hero__actions">
+          <a href="contact.html" class="btn btn--primary btn--large">Book Now</a>
+          <a href="services.html" class="btn btn--secondary btn--large">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Banner -->
+    <section class="location-banner">
+      <div class="container">
+        <div class="location-banner__content">
+          <svg class="location-banner__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span class="location-banner__text">Located in Kitui Town, Opposite Kasue Pharmacy</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview section">
+      <div class="container">
+        <div class="section__header text-center">
+          <h2 class="section__title">Our Services</h2>
+          <p class="section__subtitle">Professional beauty and grooming services for everyone</p>
+        </div>
+
+        <div class="services-grid" id="services-preview">
+          <!-- Services will be loaded dynamically -->
+        </div>
+
+        <div class="text-center">
+          <a href="services.html" class="btn btn--primary">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview section section--alt">
+      <div class="container">
+        <div class="about-preview__grid">
+          <div class="about-preview__content">
+            <h2 class="section__title">Why Choose Spike Salon?</h2>
+            <p class="about-preview__text">
+              We combine traditional barbering techniques with modern spa treatments 
+              to provide comprehensive beauty and grooming services. Our experienced 
+              team ensures every client leaves feeling confident and refreshed.
+            </p>
+            <ul class="about-preview__features">
+              <li class="about-preview__feature">
+                <svg class="about-preview__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20,6 9,17 4,12"></polyline>
+                </svg>
+                Professional certified stylists and barbers
+              </li>
+              <li class="about-preview__feature">
+                <svg class="about-preview__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20,6 9,17 4,12"></polyline>
+                </svg>
+                Premium products and modern equipment
+              </li>
+              <li class="about-preview__feature">
+                <svg class="about-preview__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20,6 9,17 4,12"></polyline>
+                </svg>
+                Relaxing spa-like environment
+              </li>
+            </ul>
+            <a href="about.html" class="btn btn--secondary">Learn More</a>
+          </div>
+          <div class="about-preview__image">
+            <img src="https://i.postimg.cc/MTXCXGrj/markasalondizayn.jpg" alt="Modern salon interior" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section">
+      <div class="container">
+        <div class="section__header text-center">
+          <h2 class="section__title">What Our Clients Say</h2>
+        </div>
+
+        <div class="testimonials__grid">
+          <div class="testimonial">
+            <div class="testimonial__content">
+              <p class="testimonial__text">"The best barbershop in Kitui! Professional service and great atmosphere."</p>
+              <div class="testimonial__author">
+                <strong class="testimonial__name">John M.</strong>
+                <span class="testimonial__service">Regular Client</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial__content">
+              <p class="testimonial__text">"Amazing nail services and very hygienic. Highly recommend!"</p>
+              <div class="testimonial__author">
+                <strong class="testimonial__name">Grace K.</strong>
+                <span class="testimonial__service">Nail Services</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial__content">
+              <p class="testimonial__text">"The spa treatments are so relaxing. Perfect place to unwind."</p>
+              <div class="testimonial__author">
+                <strong class="testimonial__name">Mary W.</strong>
+                <span class="testimonial__service">Spa Services</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+      <div class="container">
+        <div class="cta__content text-center">
+          <h2 class="cta__title">Ready to Transform Your Look?</h2>
+          <p class="cta__subtitle">Book your appointment today and experience premium beauty services</p>
+          <div class="cta__actions">
+            <a href="contact.html" class="btn btn--primary btn--large">Book Appointment</a>
+            <a href="tel:+254741097004" class="btn btn--secondary btn--large">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <!-- Footer content will be loaded by JavaScript -->
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5,12 12,5 19,12"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="assets/js/data-loader.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Content Manager - Spike Salon</title>
+    <meta name="description" content="Content management system for Spike Salon website">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" style="position: relative;">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo">
+                    <span class="nav__logo-text">SPIKE SALON</span>
+                    <span class="nav__logo-tagline">Content Manager</span>
+                </a>
+            </div>
+            
+            <div class="nav__actions">
+                <a href="index.html" class="btn btn--secondary">Back to Site</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" style="margin-top: var(--header-height);">
+        <!-- Access Control -->
+        <div id="access-control" class="access-control">
+            <div class="container">
+                <div class="access-form">
+                    <h1>Content Manager Access</h1>
+                    <p>Enter the access key to manage website content</p>
+                    <form id="access-form">
+                        <div class="form__group">
+                            <label for="access-key" class="form__label">Access Key</label>
+                            <input type="password" id="access-key" class="form__input" placeholder="Enter access key" required>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Access Manager</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Manager -->
+        <div id="content-manager" class="content-manager" style="display: none;">
+            <div class="container">
+                <div class="manager-header">
+                    <h1>Content Manager</h1>
+                    <p>Manage website content and export updated JSON files</p>
+                </div>
+
+                <!-- Navigation Tabs -->
+                <div class="manager-tabs">
+                    <button class="manager-tab manager-tab--active" data-tab="services">Services</button>
+                    <button class="manager-tab" data-tab="packages">Packages</button>
+                    <button class="manager-tab" data-tab="blog">Blog Posts</button>
+                    <button class="manager-tab" data-tab="faqs">FAQs</button>
+                    <button class="manager-tab" data-tab="site">Site Info</button>
+                    <button class="manager-tab" data-tab="bookings">Bookings</button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="manager-content">
+                    <!-- Services Tab -->
+                    <div id="services-tab" class="tab-content tab-content--active">
+                        <div class="tab-header">
+                            <h2>Services Management</h2>
+                            <div class="tab-actions">
+                                <button class="btn btn--secondary" onclick="importJSON('services')">Import JSON</button>
+                                <button class="btn btn--primary" onclick="exportJSON('services')">Export JSON</button>
+                                <button class="btn btn--primary" onclick="addNewItem('services')">Add Service</button>
+                            </div>
+                        </div>
+                        <div id="services-list" class="items-list">
+                            <!-- Services will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Packages Tab -->
+                    <div id="packages-tab" class="tab-content">
+                        <div class="tab-header">
+                            <h2>Packages Management</h2>
+                            <div class="tab-actions">
+                                <button class="btn btn--secondary" onclick="importJSON('packages')">Import JSON</button>
+                                <button class="btn btn--primary" onclick="exportJSON('packages')">Export JSON</button>
+                                <button class="btn btn--primary" onclick="addNewItem('packages')">Add Package</button>
+                            </div>
+                        </div>
+                        <div id="packages-list" class="items-list">
+                            <!-- Packages will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Blog Tab -->
+                    <div id="blog-tab" class="tab-content">
+                        <div class="tab-header">
+                            <h2>Blog Posts Management</h2>
+                            <div class="tab-actions">
+                                <button class="btn btn--secondary" onclick="importJSON('blog')">Import JSON</button>
+                                <button class="btn btn--primary" onclick="exportJSON('blog')">Export JSON</button>
+                                <button class="btn btn--primary" onclick="addNewItem('blog')">Add Post</button>
+                            </div>
+                        </div>
+                        <div id="blog-list" class="items-list">
+                            <!-- Blog posts will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- FAQs Tab -->
+                    <div id="faqs-tab" class="tab-content">
+                        <div class="tab-header">
+                            <h2>FAQs Management</h2>
+                            <div class="tab-actions">
+                                <button class="btn btn--secondary" onclick="importJSON('faqs')">Import JSON</button>
+                                <button class="btn btn--primary" onclick="exportJSON('faqs')">Export JSON</button>
+                                <button class="btn btn--primary" onclick="addNewItem('faqs')">Add FAQ</button>
+                            </div>
+                        </div>
+                        <div id="faqs-list" class="items-list">
+                            <!-- FAQs will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Site Info Tab -->
+                    <div id="site-tab" class="tab-content">
+                        <div class="tab-header">
+                            <h2>Site Information</h2>
+                            <div class="tab-actions">
+                                <button class="btn btn--secondary" onclick="importJSON('site')">Import JSON</button>
+                                <button class="btn btn--primary" onclick="exportJSON('site')">Export JSON</button>
+                                <button class="btn btn--primary" onclick="saveSiteInfo()">Save Changes</button>
+                            </div>
+                        </div>
+                        <div id="site-form" class="site-form">
+                            <!-- Site info form will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Bookings Tab -->
+                    <div id="bookings-tab" class="tab-content">
+                        <div class="tab-header">
+                            <h2>Booking Requests</h2>
+                            <div class="tab-actions">
+                                <button class="btn btn--secondary" onclick="exportBookings()">Export Bookings</button>
+                                <button class="btn btn--warning" onclick="clearBookings()">Clear All</button>
+                            </div>
+                        </div>
+                        <div id="bookings-list" class="bookings-list">
+                            <!-- Bookings will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content" style="max-width: 800px;">
+            <div class="modal__header">
+                <h3 class="modal__title" id="modal-title">Edit Item</h3>
+                <button class="modal__close" id="close-edit-modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__body" id="edit-form-container">
+                <!-- Edit form will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- File Input for Import -->
+    <input type="file" id="file-input" accept=".json" style="display: none;">
+
+    <!-- JavaScript -->
+    <script src="assets/js/data-loader.js"></script>
+    <script>
+        // Content Manager Class
+        class ContentManager {
+            constructor() {
+                this.currentData = {};
+                this.currentTab = 'services';
+                this.accessKey = 'spike2024admin'; // Change this for security
+            }
+
+            // Initialize the manager
+            init() {
+                this.setupAccessControl();
+                this.setupTabs();
+                this.setupModals();
+                this.setupFileInput();
+            }
+
+            // Access control
+            setupAccessControl() {
+                const accessForm = document.getElementById('access-form');
+                accessForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const key = document.getElementById('access-key').value;
+                    
+                    if (key === this.accessKey) {
+                        document.getElementById('access-control').style.display = 'none';
+                        document.getElementById('content-manager').style.display = 'block';
+                        this.loadAllData();
+                    } else {
+                        alert('Invalid access key');
+                    }
+                });
+            }
+
+            // Setup tab navigation
+            setupTabs() {
+                const tabs = document.querySelectorAll('.manager-tab');
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const tabName = tab.getAttribute('data-tab');
+                        this.switchTab(tabName);
+                    });
+                });
+            }
+
+            // Switch between tabs
+            switchTab(tabName) {
+                // Update tab buttons
+                document.querySelectorAll('.manager-tab').forEach(tab => {
+                    tab.classList.remove('manager-tab--active');
+                });
+                document.querySelector(`[data-tab="${tabName}"]`).classList.add('manager-tab--active');
+
+                // Update tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('tab-content--active');
+                });
+                document.getElementById(`${tabName}-tab`).classList.add('tab-content--active');
+
+                this.currentTab = tabName;
+            }
+
+            // Setup modals
+            setupModals() {
+                document.getElementById('close-edit-modal').addEventListener('click', () => {
+                    this.closeModal();
+                });
+
+                document.querySelector('#edit-modal .modal__overlay').addEventListener('click', () => {
+                    this.closeModal();
+                });
+            }
+
+            // Setup file input for imports
+            setupFileInput() {
+                const fileInput = document.getElementById('file-input');
+                fileInput.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            try {
+                                const data = JSON.parse(e.target.result);
+                                this.handleImportedData(data);
+                            } catch (error) {
+                                alert('Invalid JSON file');
+                            }
+                        };
+                        reader.readAsText(file);
+                    }
+                });
+            }
+
+            // Load all data
+            async loadAllData() {
+                try {
+                    // Load from localStorage first, then fallback to original data
+                    this.currentData.services = JSON.parse(localStorage.getItem('admin-services')) || await window.DataLoader.getServices();
+                    this.currentData.packages = JSON.parse(localStorage.getItem('admin-packages')) || await window.DataLoader.getPackages();
+                    this.currentData.blog = JSON.parse(localStorage.getItem('admin-blog')) || await window.DataLoader.getBlogPosts();
+                    this.currentData.faqs = JSON.parse(localStorage.getItem('admin-faqs')) || await window.DataLoader.getFAQs();
+                    this.currentData.site = JSON.parse(localStorage.getItem('admin-site')) || await window.DataLoader.getSiteData();
+
+                    this.renderServices();
+                    this.renderPackages();
+                    this.renderBlog();
+                    this.renderFAQs();
+                    this.renderSiteInfo();
+                    this.renderBookings();
+                } catch (error) {
+                    console.error('Error loading data:', error);
+                }
+            }
+
+            // Render services
+            renderServices() {
+                const container = document.getElementById('services-list');
+                const services = this.currentData.services || [];
+
+                container.innerHTML = services.map(service => `
+                    <div class="item-card">
+                        <div class="item-info">
+                            <h3>${service.name}</h3>
+                            <p>${service.category} - ${service.duration} - KSH ${service.price.toLocaleString()}</p>
+                            <p>${service.blurb}</p>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn--secondary" onclick="manager.editItem('services', '${service.id}')">Edit</button>
+                            <button class="btn btn--warning" onclick="manager.deleteItem('services', '${service.id}')">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Render packages
+            renderPackages() {
+                const container = document.getElementById('packages-list');
+                const packages = this.currentData.packages || [];
+
+                container.innerHTML = packages.map(pkg => `
+                    <div class="item-card">
+                        <div class="item-info">
+                            <h3>${pkg.title}</h3>
+                            <p>${pkg.duration} - KSH ${pkg.price.toLocaleString()}</p>
+                            <p>${pkg.description}</p>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn--secondary" onclick="manager.editItem('packages', '${pkg.id}')">Edit</button>
+                            <button class="btn btn--warning" onclick="manager.deleteItem('packages', '${pkg.id}')">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Render blog posts
+            renderBlog() {
+                const container = document.getElementById('blog-list');
+                const posts = this.currentData.blog || [];
+
+                container.innerHTML = posts.map(post => `
+                    <div class="item-card">
+                        <div class="item-info">
+                            <h3>${post.title}</h3>
+                            <p>By ${post.author} - ${post.date}</p>
+                            <p>${post.excerpt}</p>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn--secondary" onclick="manager.editItem('blog', '${post.id}')">Edit</button>
+                            <button class="btn btn--warning" onclick="manager.deleteItem('blog', '${post.id}')">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Render FAQs
+            renderFAQs() {
+                const container = document.getElementById('faqs-list');
+                const faqs = this.currentData.faqs || [];
+
+                container.innerHTML = faqs.map(faq => `
+                    <div class="item-card">
+                        <div class="item-info">
+                            <h3>${faq.question}</h3>
+                            <p>${faq.answer.substring(0, 100)}...</p>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn--secondary" onclick="manager.editItem('faqs', '${faq.id}')">Edit</button>
+                            <button class="btn btn--warning" onclick="manager.deleteItem('faqs', '${faq.id}')">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Render site info
+            renderSiteInfo() {
+                const container = document.getElementById('site-form');
+                const site = this.currentData.site || {};
+
+                container.innerHTML = `
+                    <form id="site-info-form">
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label class="form__label">Business Name</label>
+                                <input type="text" name="name" value="${site.name || ''}" class="form__input">
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Tagline</label>
+                                <input type="text" name="tagline" value="${site.tagline || ''}" class="form__input">
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label class="form__label">Phone</label>
+                                <input type="text" name="phone" value="${site.phone || ''}" class="form__input">
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Email</label>
+                                <input type="email" name="email" value="${site.email || ''}" class="form__input">
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label">Address</label>
+                            <input type="text" name="address" value="${site.address || ''}" class="form__input">
+                        </div>
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label class="form__label">Instagram Handle</label>
+                                <input type="text" name="instagram" value="${site.social?.instagram || ''}" class="form__input">
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">TikTok Handle</label>
+                                <input type="text" name="tiktok" value="${site.social?.tiktok || ''}" class="form__input">
+                            </div>
+                        </div>
+                    </form>
+                `;
+            }
+
+            // Render bookings
+            renderBookings() {
+                const container = document.getElementById('bookings-list');
+                const bookings = JSON.parse(localStorage.getItem('salon-bookings') || '[]');
+
+                if (bookings.length === 0) {
+                    container.innerHTML = '<p>No booking requests found.</p>';
+                    return;
+                }
+
+                container.innerHTML = bookings.map(booking => `
+                    <div class="booking-card">
+                        <div class="booking-info">
+                            <h3>${booking.name}</h3>
+                            <p><strong>Phone:</strong> ${booking.phone}</p>
+                            <p><strong>Service:</strong> ${booking.serviceName}</p>
+                            <p><strong>Date:</strong> ${booking.date} ${booking.time || ''}</p>
+                            <p><strong>Price:</strong> KSH ${parseInt(booking.servicePrice).toLocaleString()}</p>
+                            ${booking.notes ? `<p><strong>Notes:</strong> ${booking.notes}</p>` : ''}
+                            <p><strong>Submitted:</strong> ${new Date(booking.timestamp).toLocaleString()}</p>
+                        </div>
+                        <div class="booking-actions">
+                            <button class="btn btn--warning" onclick="manager.deleteBooking('${booking.id}')">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Edit item
+            editItem(type, id) {
+                const items = this.currentData[type];
+                const item = items.find(i => i.id === id);
+                
+                if (!item) return;
+
+                this.openEditModal(type, item);
+            }
+
+            // Delete item
+            deleteItem(type, id) {
+                if (confirm('Are you sure you want to delete this item?')) {
+                    this.currentData[type] = this.currentData[type].filter(item => item.id !== id);
+                    this.saveToLocalStorage(type);
+                    this.renderCurrentTab();
+                }
+            }
+
+            // Delete booking
+            deleteBooking(id) {
+                if (confirm('Are you sure you want to delete this booking?')) {
+                    const bookings = JSON.parse(localStorage.getItem('salon-bookings') || '[]');
+                    const updatedBookings = bookings.filter(booking => booking.id !== id);
+                    localStorage.setItem('salon-bookings', JSON.stringify(updatedBookings));
+                    this.renderBookings();
+                }
+            }
+
+            // Add new item
+            addNewItem(type) {
+                const newItem = this.createEmptyItem(type);
+                this.openEditModal(type, newItem, true);
+            }
+
+            // Create empty item template
+            createEmptyItem(type) {
+                const templates = {
+                    services: {
+                        id: 'new-' + Date.now(),
+                        name: '',
+                        blurb: '',
+                        duration: '',
+                        price: 0,
+                        paymentType: 'Pay on delivery',
+                        image: '',
+                        category: ''
+                    },
+                    packages: {
+                        id: 'new-' + Date.now(),
+                        title: '',
+                        description: '',
+                        includes: [],
+                        price: 0,
+                        image: '',
+                        duration: '',
+                        paymentType: '50% deposit'
+                    },
+                    blog: {
+                        id: 'new-' + Date.now(),
+                        slug: '',
+                        title: '',
+                        author: '',
+                        date: new Date().toISOString().split('T')[0],
+                        tags: [],
+                        excerpt: '',
+                        contentHTML: '',
+                        image: ''
+                    },
+                    faqs: {
+                        id: 'new-' + Date.now(),
+                        question: '',
+                        answer: ''
+                    }
+                };
+
+                return templates[type] || {};
+            }
+
+            // Open edit modal
+            openEditModal(type, item, isNew = false) {
+                const modal = document.getElementById('edit-modal');
+                const title = document.getElementById('modal-title');
+                const container = document.getElementById('edit-form-container');
+
+                title.textContent = isNew ? `Add New ${type.slice(0, -1)}` : `Edit ${type.slice(0, -1)}`;
+
+                container.innerHTML = this.generateEditForm(type, item, isNew);
+
+                modal.classList.add('modal--active');
+                document.body.classList.add('modal-open');
+            }
+
+            // Generate edit form
+            generateEditForm(type, item, isNew) {
+                const forms = {
+                    services: `
+                        <form id="edit-form" data-type="${type}" data-id="${item.id}" data-is-new="${isNew}">
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label class="form__label">Name</label>
+                                    <input type="text" name="name" value="${item.name || ''}" class="form__input" required>
+                                </div>
+                                <div class="form__group">
+                                    <label class="form__label">Category</label>
+                                    <select name="category" class="form__select" required>
+                                        <option value="">Select category</option>
+                                        <option value="Barbershop" ${item.category === 'Barbershop' ? 'selected' : ''}>Barbershop</option>
+                                        <option value="Hairdressing" ${item.category === 'Hairdressing' ? 'selected' : ''}>Hairdressing</option>
+                                        <option value="Nails" ${item.category === 'Nails' ? 'selected' : ''}>Nails</option>
+                                        <option value="Microblading" ${item.category === 'Microblading' ? 'selected' : ''}>Microblading</option>
+                                        <option value="Eyelash Extensions" ${item.category === 'Eyelash Extensions' ? 'selected' : ''}>Eyelash Extensions</option>
+                                        <option value="Wigging" ${item.category === 'Wigging' ? 'selected' : ''}>Wigging</option>
+                                        <option value="Facials" ${item.category === 'Facials' ? 'selected' : ''}>Facials</option>
+                                        <option value="Waxing" ${item.category === 'Waxing' ? 'selected' : ''}>Waxing</option>
+                                        <option value="Massage" ${item.category === 'Massage' ? 'selected' : ''}>Massage</option>
+                                        <option value="Dreadlocks" ${item.category === 'Dreadlocks' ? 'selected' : ''}>Dreadlocks</option>
+                                        <option value="Steaming" ${item.category === 'Steaming' ? 'selected' : ''}>Steaming</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Description</label>
+                                <textarea name="blurb" class="form__textarea" rows="3" required>${item.blurb || ''}</textarea>
+                            </div>
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label class="form__label">Duration</label>
+                                    <input type="text" name="duration" value="${item.duration || ''}" class="form__input" placeholder="e.g., 30 min" required>
+                                </div>
+                                <div class="form__group">
+                                    <label class="form__label">Price (KSH)</label>
+                                    <input type="number" name="price" value="${item.price || ''}" class="form__input" required>
+                                </div>
+                            </div>
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label class="form__label">Payment Type</label>
+                                    <select name="paymentType" class="form__select" required>
+                                        <option value="Pay on delivery" ${item.paymentType === 'Pay on delivery' ? 'selected' : ''}>Pay on delivery</option>
+                                        <option value="50% deposit" ${item.paymentType === '50% deposit' ? 'selected' : ''}>50% deposit</option>
+                                    </select>
+                                </div>
+                                <div class="form__group">
+                                    <label class="form__label">Image URL</label>
+                                    <input type="url" name="image" value="${item.image || ''}" class="form__input" required>
+                                </div>
+                            </div>
+                            <div class="form__actions">
+                                <button type="button" class="btn btn--secondary" onclick="manager.closeModal()">Cancel</button>
+                                <button type="submit" class="btn btn--primary">Save</button>
+                            </div>
+                        </form>
+                    `,
+                    packages: `
+                        <form id="edit-form" data-type="${type}" data-id="${item.id}" data-is-new="${isNew}">
+                            <div class="form__group">
+                                <label class="form__label">Title</label>
+                                <input type="text" name="title" value="${item.title || ''}" class="form__input" required>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Description</label>
+                                <textarea name="description" class="form__textarea" rows="3" required>${item.description || ''}</textarea>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Includes (one per line)</label>
+                                <textarea name="includes" class="form__textarea" rows="4" required>${(item.includes || []).join('\n')}</textarea>
+                            </div>
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label class="form__label">Duration</label>
+                                    <input type="text" name="duration" value="${item.duration || ''}" class="form__input" placeholder="e.g., 4 hours" required>
+                                </div>
+                                <div class="form__group">
+                                    <label class="form__label">Price (KSH)</label>
+                                    <input type="number" name="price" value="${item.price || ''}" class="form__input" required>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Image URL</label>
+                                <input type="url" name="image" value="${item.image || ''}" class="form__input" required>
+                            </div>
+                            <div class="form__actions">
+                                <button type="button" class="btn btn--secondary" onclick="manager.closeModal()">Cancel</button>
+                                <button type="submit" class="btn btn--primary">Save</button>
+                            </div>
+                        </form>
+                    `,
+                    blog: `
+                        <form id="edit-form" data-type="${type}" data-id="${item.id}" data-is-new="${isNew}">
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label class="form__label">Title</label>
+                                    <input type="text" name="title" value="${item.title || ''}" class="form__input" required>
+                                </div>
+                                <div class="form__group">
+                                    <label class="form__label">Slug</label>
+                                    <input type="text" name="slug" value="${item.slug || ''}" class="form__input" required>
+                                </div>
+                            </div>
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label class="form__label">Author</label>
+                                    <input type="text" name="author" value="${item.author || ''}" class="form__input" required>
+                                </div>
+                                <div class="form__group">
+                                    <label class="form__label">Date</label>
+                                    <input type="date" name="date" value="${item.date || ''}" class="form__input" required>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Tags (comma separated)</label>
+                                <input type="text" name="tags" value="${(item.tags || []).join(', ')}" class="form__input" required>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Excerpt</label>
+                                <textarea name="excerpt" class="form__textarea" rows="3" required>${item.excerpt || ''}</textarea>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Content HTML</label>
+                                <textarea name="contentHTML" class="form__textarea" rows="8" required>${item.contentHTML || ''}</textarea>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Image URL</label>
+                                <input type="url" name="image" value="${item.image || ''}" class="form__input" required>
+                            </div>
+                            <div class="form__actions">
+                                <button type="button" class="btn btn--secondary" onclick="manager.closeModal()">Cancel</button>
+                                <button type="submit" class="btn btn--primary">Save</button>
+                            </div>
+                        </form>
+                    `,
+                    faqs: `
+                        <form id="edit-form" data-type="${type}" data-id="${item.id}" data-is-new="${isNew}">
+                            <div class="form__group">
+                                <label class="form__label">Question</label>
+                                <input type="text" name="question" value="${item.question || ''}" class="form__input" required>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label">Answer</label>
+                                <textarea name="answer" class="form__textarea" rows="6" required>${item.answer || ''}</textarea>
+                            </div>
+                            <div class="form__actions">
+                                <button type="button" class="btn btn--secondary" onclick="manager.closeModal()">Cancel</button>
+                                <button type="submit" class="btn btn--primary">Save</button>
+                            </div>
+                        </form>
+                    `
+                };
+
+                const formHTML = forms[type] || '<p>Form not available</p>';
+                
+                // Add form submit handler
+                setTimeout(() => {
+                    const form = document.getElementById('edit-form');
+                    if (form) {
+                        form.addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            this.saveItem(form);
+                        });
+                    }
+                }, 100);
+
+                return formHTML;
+            }
+
+            // Save item
+            saveItem(form) {
+                const formData = new FormData(form);
+                const type = form.getAttribute('data-type');
+                const id = form.getAttribute('data-id');
+                const isNew = form.getAttribute('data-is-new') === 'true';
+
+                const item = { id };
+
+                // Convert form data to object
+                for (let [key, value] of formData.entries()) {
+                    if (key === 'includes') {
+                        item[key] = value.split('\n').filter(line => line.trim());
+                    } else if (key === 'tags') {
+                        item[key] = value.split(',').map(tag => tag.trim()).filter(tag => tag);
+                    } else if (key === 'price') {
+                        item[key] = parseInt(value);
+                    } else {
+                        item[key] = value;
+                    }
+                }
+
+                // Add or update item
+                if (isNew) {
+                    this.currentData[type].push(item);
+                } else {
+                    const index = this.currentData[type].findIndex(i => i.id === id);
+                    if (index !== -1) {
+                        this.currentData[type][index] = item;
+                    }
+                }
+
+                this.saveToLocalStorage(type);
+                this.renderCurrentTab();
+                this.closeModal();
+            }
+
+            // Save site info
+            saveSiteInfo() {
+                const form = document.getElementById('site-info-form');
+                const formData = new FormData(form);
+                
+                const siteData = { ...this.currentData.site };
+                
+                for (let [key, value] of formData.entries()) {
+                    if (key === 'instagram' || key === 'tiktok') {
+                        if (!siteData.social) siteData.social = {};
+                        siteData.social[key] = value;
+                    } else {
+                        siteData[key] = value;
+                    }
+                }
+
+                this.currentData.site = siteData;
+                this.saveToLocalStorage('site');
+                alert('Site information saved successfully!');
+            }
+
+            // Save to localStorage
+            saveToLocalStorage(type) {
+                localStorage.setItem(`admin-${type}`, JSON.stringify(this.currentData[type]));
+                
+                // Also update the main DataLoader cache so changes appear immediately
+                const cacheKey = `data/${type}.json`;
+                if (window.DataLoader && window.DataLoader.cache) {
+                    window.DataLoader.cache.set(cacheKey, this.currentData[type]);
+                }
+            }
+
+            // Render current tab
+            renderCurrentTab() {
+                switch (this.currentTab) {
+                    case 'services':
+                        this.renderServices();
+                        break;
+                    case 'packages':
+                        this.renderPackages();
+                        break;
+                    case 'blog':
+                        this.renderBlog();
+                        break;
+                    case 'faqs':
+                        this.renderFAQs();
+                        break;
+                    case 'site':
+                        this.renderSiteInfo();
+                        break;
+                    case 'bookings':
+                        this.renderBookings();
+                        break;
+                }
+            }
+
+            // Close modal
+            closeModal() {
+                const modal = document.getElementById('edit-modal');
+                modal.classList.remove('modal--active');
+                document.body.classList.remove('modal-open');
+            }
+
+            // Export JSON
+            exportJSON(type) {
+                const data = this.currentData[type];
+                const filename = `${type}.json`;
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+
+            // Import JSON
+            importJSON(type) {
+                this.importType = type;
+                document.getElementById('file-input').click();
+            }
+
+            // Handle imported data
+            handleImportedData(data) {
+                if (this.importType && confirm(`Replace current ${this.importType} data with imported data?`)) {
+                    this.currentData[this.importType] = data;
+                    this.saveToLocalStorage(this.importType);
+                    this.renderCurrentTab();
+                    alert('Data imported successfully!');
+                }
+            }
+
+            // Export bookings
+            exportBookings() {
+                const bookings = JSON.parse(localStorage.getItem('salon-bookings') || '[]');
+                const filename = `bookings-${new Date().toISOString().split('T')[0]}.json`;
+                const blob = new Blob([JSON.stringify(bookings, null, 2)], { type: 'application/json' });
+                
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+
+            // Clear bookings
+            clearBookings() {
+                if (confirm('Are you sure you want to clear all booking requests?')) {
+                    localStorage.removeItem('salon-bookings');
+                    this.renderBookings();
+                    alert('All bookings cleared!');
+                }
+            }
+        }
+
+        // Initialize manager
+        const manager = new ContentManager();
+        manager.init();
+
+        // Global functions for onclick handlers
+        window.manager = manager;
+        window.exportJSON = (type) => manager.exportJSON(type);
+        window.importJSON = (type) => manager.importJSON(type);
+        window.addNewItem = (type) => manager.addNewItem(type);
+        window.saveSiteInfo = () => manager.saveSiteInfo();
+        window.exportBookings = () => manager.exportBookings();
+        window.clearBookings = () => manager.clearBookings();
+    </script>
+
+    <style>
+        .access-control {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-gray-50);
+        }
+
+        .access-form {
+            background: var(--brand-light);
+            padding: var(--space-12);
+            border-radius: var(--rounded-2xl);
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .access-form h1 {
+            margin-bottom: var(--space-4);
+            color: var(--brand-primary);
+        }
+
+        .access-form p {
+            margin-bottom: var(--space-8);
+            color: var(--color-gray-600);
+        }
+
+        .content-manager {
+            padding: var(--space-8) 0;
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        .manager-header {
+            text-align: center;
+            margin-bottom: var(--space-12);
+        }
+
+        .manager-header h1 {
+            color: var(--brand-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .manager-tabs {
+            display: flex;
+            gap: var(--space-2);
+            margin-bottom: var(--space-8);
+            border-bottom: 1px solid var(--color-gray-200);
+            overflow-x: auto;
+        }
+
+        .manager-tab {
+            padding: var(--space-3) var(--space-6);
+            border: none;
+            background: none;
+            color: var(--color-gray-600);
+            font-weight: var(--font-medium);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .manager-tab:hover,
+        .manager-tab--active {
+            color: var(--brand-primary);
+            border-bottom-color: var(--brand-primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content--active {
+            display: block;
+        }
+
+        .tab-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-8);
+            flex-wrap: wrap;
+            gap: var(--space-4);
+        }
+
+        .tab-actions {
+            display: flex;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+        }
+
+        .items-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .item-card {
+            background: var(--brand-light);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--rounded-xl);
+            padding: var(--space-6);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--space-4);
+        }
+
+        .item-info h3 {
+            margin-bottom: var(--space-2);
+            color: var(--brand-dark);
+        }
+
+        .item-info p {
+            color: var(--color-gray-600);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-2);
+        }
+
+        .item-actions {
+            display: flex;
+            gap: var(--space-2);
+            flex-shrink: 0;
+        }
+
+        .site-form {
+            background: var(--brand-light);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--rounded-xl);
+            padding: var(--space-8);
+        }
+
+        .bookings-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .booking-card {
+            background: var(--brand-light);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--rounded-xl);
+            padding: var(--space-6);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--space-4);
+        }
+
+        .booking-info h3 {
+            margin-bottom: var(--space-3);
+            color: var(--brand-primary);
+        }
+
+        .booking-info p {
+            margin-bottom: var(--space-2);
+            font-size: var(--text-sm);
+        }
+
+        .booking-actions {
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .tab-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .tab-actions {
+                justify-content: center;
+            }
+
+            .item-card,
+            .booking-card {
+                flex-direction: column;
+            }
+
+            .item-actions,
+            .booking-actions {
+                align-self: stretch;
+            }
+
+            .manager-tabs {
+                justify-content: center;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Spike Salon Barbershop & Spa</title>
+    <meta name="description" content="The page you're looking for could not be found. Return to Spike Salon's homepage.">
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo">
+                    <span class="nav__logo-text">SPIKE SALON</span>
+                    <span class="nav__logo-tagline">Barbershop & Spa</span>
+                </a>
+            </div>
+            
+            <div class="nav__actions">
+                <a href="index.html" class="btn btn--primary">Back to Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <section class="error-section">
+            <div class="container">
+                <div class="error-content">
+                    <div class="error-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                        </svg>
+                    </div>
+                    
+                    <h1 class="error-title">404 - Page Not Found</h1>
+                    <p class="error-description">
+                        Sorry, the page you're looking for doesn't exist or has been moved. 
+                        Let's get you back to where you need to be.
+                    </p>
+                    
+                    <div class="error-actions">
+                        <a href="index.html" class="btn btn--primary btn--large">Go Home</a>
+                        <a href="services.html" class="btn btn--secondary btn--large">View Services</a>
+                        <a href="contact.html" class="btn btn--secondary btn--large">Contact Us</a>
+                    </div>
+                    
+                    <div class="error-links">
+                        <h3>Popular Pages</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Our Services</a></li>
+                            <li><a href="packages.html">Service Packages</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <!-- Footer content will be loaded by JavaScript -->
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <style>
+        .error-section {
+            min-height: calc(100vh - var(--header-height) - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-20) 0;
+        }
+
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .error-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto var(--space-8);
+            color: var(--brand-primary);
+        }
+
+        .error-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .error-title {
+            font-size: var(--text-4xl);
+            color: var(--brand-dark);
+            margin-bottom: var(--space-6);
+        }
+
+        .error-description {
+            font-size: var(--text-lg);
+            color: var(--color-gray-600);
+            margin-bottom: var(--space-12);
+            line-height: var(--leading-relaxed);
+        }
+
+        .error-actions {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--space-16);
+        }
+
+        .error-links {
+            background: var(--color-gray-50);
+            padding: var(--space-8);
+            border-radius: var(--rounded-xl);
+        }
+
+        .error-links h3 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-6);
+            color: var(--brand-dark);
+        }
+
+        .error-links ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+            justify-content: center;
+        }
+
+        .error-links li {
+            list-style: none;
+        }
+
+        .error-links a {
+            color: var(--brand-primary);
+            text-decoration: none;
+            font-weight: var(--font-medium);
+            transition: var(--transition);
+        }
+
+        .error-links a:hover {
+            color: var(--brand-primary-600);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .error-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .error-title {
+                font-size: var(--text-3xl);
+            }
+
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .error-actions .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .error-links ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</body>
+</html>

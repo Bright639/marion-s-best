@@ -1,0 +1,84 @@
+[
+  {
+    "id": "Royal Glow Experience",
+    "title": "Royal Glow Experience",
+    "description": "Complete makeover package for the modern woman seeking elegance and style",
+    "includes": [
+      "Professional hair styling and treatment",
+      "Classic manicure with gel application",
+      "Relaxing pedicure with foot massage",
+      "Deep cleansing facial treatment",
+      "Complimentary refreshments"
+    ],
+    "price": 800,
+    "image": "https://i.postimg.cc/GmTjtyG9/images.jpg",
+    "duration": "4 hours",
+    "paymentType": "50% deposit"
+  },
+  {
+    "id": "Majesty Makeover Experience",
+    "title": "Majesty Makeover Experience",
+    "description": "The ultimate luxury experience for a full transformation from head to toe. Perfect for special occasions, weddings, or self-care days.",
+    "includes": [
+      "French curls or Marley braids installation",
+      " Full wash, blow-dry & treatmen",
+      "Builder gel or tips manicure",
+      "Pedicure with skin scrub",
+      "Eyebrow shaping and light makeup touch-up"
+    ],
+    "price": 3000,
+    "image": "https://i.postimg.cc/bwXjs14X/Screenshot-2025-10-24-180507.png",
+    "duration": "2.5 hours",
+    "paymentType": "50% deposit"
+  },
+  {
+    "id": "Sparkle & Shine Deluxe",
+    "title": "Sparkle & Shine Deluxe",
+    "description": "Glamorous nail and beauty package for those who love to sparkle",
+    "includes": [
+      "Gel manicure with premium polish",
+      " Luxury pedicure with spa treatment",
+      "Creative nail art design",
+      "Hand and foot exfoliation",
+      "Moisturizing hand and foot massage",
+      " Luxury pedicure and manicure"
+    ],
+    "price": 2500,
+    "image": "https://i.postimg.cc/vBjGhk2G/download-6.jpg",
+    "duration": "5 hours",
+    "paymentType": "50% deposit"
+  },
+  {
+    "id": "Men's Executive",
+    "title": "Men's Executive",
+    "description": "Professional grooming package for the business executive",
+    "includes": [
+      "Executive haircut and styling",
+      " Precision beard trimming",
+      "Professional shave",
+      " Facial cleansing treatment",
+      " Scalp massage",
+      "Eyebrow trimming"
+    ],
+    "price": 1500,
+    "image": "https://i.postimg.cc/j5PcN0Br/download.jpg",
+    "duration": "3 hours",
+    "paymentType": "50% deposit"
+  },
+  {
+    "id": "Lash Luxury",
+    "title": "Lash Luxury",
+    "description": "Complete eye enhancement package for stunning lashes and brows",
+    "includes": [
+      "Full set eyelash extensions",
+      "Eyebrow microblading",
+      "Lash lift and tint",
+      "Eyebrow shaping and tinting",
+      "CEye area facial treatment"
+    ],
+    "price": 2500,
+    "image": "https://i.postimg.cc/NMRS6fM2/100-Melanin-Beauty-Eyelash-Extensions-High-quality-Stock-Photos-of-Aesthetic-Black-African-America.jpg",
+    "duration": "3.5 hours",
+    "paymentType": "50% deposit"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "name": "Spike Salon Barbershop & Spa",
+  "tagline": "Style for Him. Glam for Her",
+  "phone": "+254 741 097 004",
+  "whatsapp": "+254741097004",
+  "email": "info@spikesalon.com",
+  "address": "Kitui Town, Opposite Kasue Pharmacy",
+  "social": {
+    "tiktok": "Spike SBS",
+    "instagram": "Spike SBS"
+  },
+  "hours": {
+    "weekdays": "8:00 AM - 8:00 PM",
+    "saturday": "8:00 AM - 8:00 PM",
+    "sunday": "Closed"
+  },
+  "policies": {
+    "cancellation": "Cancellations must be made at least 24 hours in advance to avoid charges. Cancellations made within 24 hours may result in a 50% charge of the service fee.",
+    "reschedule": "Rescheduling is allowed up to 2 hours before your appointment time. Late rescheduling may incur additional charges.",
+    "deposit": "Some services require a 50% deposit to secure your booking. Deposits are non-refundable but can be applied to rescheduled appointments.",
+    "lateCancellation": "Late cancellations (less than 24 hours) will be charged 50% of the service fee.",
+    "noShow": "No-show appointments will be charged the full service fee.",
+    "depositRefund": "Deposits are non-refundable but transferable to future appointments within 30 days."
+  },
+  "businessInfo": {
+    "established": "2020",
+    "license": "BL-2020-KT-001",
+    "certification": "Kenya Association of Beauty Professionals"
+  }
+}

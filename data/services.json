@@ -1,0 +1,287 @@
+[
+  {
+    "id": "clean-shave",
+    "name": "Clean Shave",
+    "blurb": "Ultimate smooth shave by expert barbers using premium products.",
+    "duration": "30 min",
+    "price": 100,
+    "paymentType": "Pay on delivery",
+    "image": "https://i.postimg.cc/Ss1SW38N/50-Haircut-Options-and-Best-Hairstyles-for-Balding-Men.jpg",
+    "category": "Barbershop"
+  },
+  {
+    "id": "haircut-styling",
+    "name": "Haircut & Styling",
+    "blurb": "Modern cuts and styling for all hair types with professional finishing.",
+    "duration": "45 min",
+    "price": 100,
+    "paymentType": "Pay on delivery",
+    "image": "https://i.postimg.cc/NfH9Lz7v/86c5328f-aa9c-4c76-8846-ac6bc88bd0f8.jpg",
+    "category": "Barbershop"
+  },
+   {
+    "id": "Cuts",
+    "name": "Cuts",
+    "blurb": "Quick and simple trim for a neat and tidy look. Ideal for regular maintenance to keep your hair in shape.",
+    "duration": "15 min",
+    "price": 50,
+    "paymentType": "Pay on delivery",
+    "image": "https://i.postimg.cc/pLDH6gKL/download.jpg",
+    "category": "Barbershop"
+  },
+   {
+    "id": "Kids Haircuts",
+    "name": "Kids Haircuts",
+    "blurb": "Gentle and stylish cuts for children, ensuring comfort and care while giving them a smart and adorable look.",
+    "duration": "25 min",
+    "price": 50,
+    "paymentType": "Pay on delivery",
+    "image": "https://i.postimg.cc/X71RDnr2/20-Best-Back-to-School-Hair-Cut-For-black-kids.jpg",
+    "category": "Barbershop"
+  },
+ {
+    "id": "Haircuts + Scrub",
+    "name": "Haircuts + Scrub",
+    "blurb": "Enjoy a full grooming experience! This package includes a professional haircut and scalp scrub that refreshes and revitalizes your skin.",
+    "duration": "45 min",
+    "price": 300,
+    "paymentType": "Pay on delivery",
+    "image": "https://i.postimg.cc/nz5BmMFT/e3d951a6-b132-4931-86cd-a18adb0fd0bc.jpg",
+    "category": "Barbershop"
+  },
+
+  {
+    "id": "beard-trimming",
+    "name": "Beard Trimming & Shaping",
+    "blurb": "Professional beard maintenance and shaping to enhance your look.",
+    "duration": "25 min",
+    "price": 100,
+    "paymentType": "Pay on delivery",
+    "image": "https://i.postimg.cc/m2vQY6Nt/f7dc6cbe-3dfa-43ef-ad5c-1d0f0ae2ee12.jpg",
+    "category": "Barbershop"
+  },
+  {
+    "id": "Hair Washing, Brow & Treatment",
+    "name": "Hair Washing & Treatment",
+    "blurb": "Professional hair care and conditioning with premium products.",
+    "duration": "30 min",
+    "price": 400,
+    "paymentType": "Pay on delivery",
+    "image": "https://i.postimg.cc/yxVVCBHV/Get-ready-to-flaunt-your-luscious-locks-hair-skin-beauty.jpg",
+    "category": "Hairdressing"
+  },
+  {
+    "id": "Hair Coloring & Highlights",
+    "name": "Hair Coloring & Highlights",
+    "blurb": "Professional hair coloring services with high-quality products.",
+    "duration": "120 min",
+    "price": 500,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/D0ztczhp/Fall-Pixie-Haircut-Ideas-for-Black-Women.jpg",
+    "category": "Hairdressing"
+  },
+  {
+    "id": "Track and Sew",
+    "name": "Special Occasion Hair Styling",
+    "blurb": "A durable and stylish weave installation technique where tracks are sewn neatly for a natural and voluminous finish..",
+    "duration": "90 min",
+    "price": 1000,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/prjBsKyp/download-2.jpg",
+    "category": "Hairdressing"
+  },
+  {
+    "id": "Plain Gel Application",
+    "name": "Gel Application",
+    "blurb": "Perfectly polished nails for every occasion with long-lasting gel.",
+    "duration": "30 min",
+    "price": 300,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/cJ7LF3FZ/7cdb38ed-295b-4169-874c-d79f4cf53a21.jpg",
+    "category": "Nails"
+  },
+  {
+    "id": "Tips",
+    "name": "Tips",
+    "blurb": "Extend and shape your nails beautifully with durable tips for a polished, glamorous look.",
+    "duration": "50 min",
+    "price": 800,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/vmsP1qq8/00ffcb26-cb45-4a65-9dd7-f5b11cbbebf6.jpg",
+    "category": "Nails"
+  },
+  {
+    "id": "Stick-ons",
+    "name": "Stick-ons",
+    "blurb": "Quick and trendy stick-on nails designed for those who love flexibility and fast transformations.",
+    "duration": "45 min",
+    "price": 600,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/x8nJMHrn/9e9e249e-4cc2-4cf2-8059-d1b5f7810630.jpg",
+    "category": "Nails"
+  },
+  {
+    "id": "Builder Gel",
+    "name": "Builder Gel",
+    "blurb": "Strengthen your natural nails with our high-quality builder gel — ideal for long-lasting shine and durability.",
+    "duration": "40 min",
+    "price": 500,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/gcsq4cgt/64009092-a365-41cd-93bd-52fd94c323d1.jpg",
+    "category": "Nails"
+  },
+  {
+    "id": "Peacock",
+    "name": "Peacock",
+    "blurb": "Add creativity and flair to your nails with our colorful peacock-inspired designs — perfect for special occasions!",
+    "duration": "30 min",
+    "price": 300,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/pTzxx16r/Turquoise-and-Gold-Foil-Beach-Nails.jpg",
+    "category": "Nails"
+  },
+  {
+    "id": "Classic Manicure",
+    "name": "Classic Manicure",
+    "blurb": "Complete nail care and beautification with cuticle treatment.",
+    "duration": "45 min",
+    "price": 300,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/BQFX5Zny/Glamorous-Glitter-Nails.jpg",
+    "category": "Nails"
+  },
+  {
+    "id": "Classic pedicure",
+    "name": "Classic Pedicure",
+    "blurb": "Relaxing foot care and nail treatment with massage.",
+    "duration": "60 min",
+    "price": 500,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/Ghfxtm5b/Beauty-This-is-clean-Facebook-1.jpg",
+    "category": "Nails"
+  },
+  
+  {
+    "id": "Treatment",
+    "name": "Treatment",
+    "blurb": "Restore your hair’s health and shine with a nourishing treatment that strengthens and revitalizes.",
+    "duration": "20 to 30 min",
+    "price": 200,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/s1dCLPcH/2bb745f0-88e0-45cb-979e-91283da3d06f.jpg",
+    "category": "Microblading"
+  },
+  {
+    "id": "eyebrow-shaping",
+    "name": "Eyebrow Shaping & Tinting",
+    "blurb": "Professional eyebrow shaping and tinting for defined brows.",
+    "duration": "15 min",
+    "price": 100,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/BvQRxg08/Lash-Lift-Elleebana-OFFICIAL.jpg",
+    "category": "Eyelash Extensions"
+  },
+  {
+    "id": "Hair Gel",
+    "name": "Hair Gel",
+    "blurb": "Smooth and style your hair with precision using professional-quality gel for a sleek finish.",
+    "duration": "90 min",
+    "price": 700,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/qR18QjkV/by-c.jpg",
+    "category": "Microblading"
+  },
+  {
+    "id": "Stitch Lines",
+    "name": "Stitch Lines",
+    "blurb": "Trendy and clean stitch-line braids that give a polished and elegant appearance suitable for any occasion.",
+    "duration": "60 min",
+    "price": 1300,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/t4DCsfkc/Back-with-the-stitch-braids-Service-6-Stitch.jpg",
+    "category": "Microblading"
+
+  },
+  {
+    "id": "Natural Twists Retouch",
+    "name": "Natural Twists Retouch",
+    "blurb": "Refresh and tighten your natural twists for a renewed, neat, and elegant hairstyle.",
+    "duration": "120 min",
+    "price": 900,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/4ytpZZz0/6a72a899-a139-440a-82b8-da9ac297214e.jpg",
+    "category": "Microblading"
+  },
+  {
+    "id": "wig-maintenance",
+    "name": "Wig Maintenance & Care",
+    "blurb": "Professional wig cleaning, styling, and maintenance services.",
+    "duration": "60 min",
+    "price": 1000,
+    "paymentType": "Pay on delivery",
+    "image": "https://i.postimg.cc/Jhv1hnyP/lace-front-wig-install-worldnewhair-tutorial.jpg",
+    "category": "Wigging"
+  },
+  {
+    "id": "deep-cleansing-facial",
+    "name": "Deep Cleansing Facial",
+    "blurb": "Purifying facial treatment for clear, healthy skin.",
+    "duration": "60 min",
+    "price": 500,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/q72HLGDk/Deep-Cleansing-Facial-for-Glowing-Skin-Luxury-Skincare-Experience.jpg",
+    "category": "Facials"
+  },
+
+  {
+    "id": "facial-waxing",
+    "name": "Facial Waxing",
+    "blurb": "Gentle hair removal for eyebrows, upper lip, and facial areas.",
+    "duration": "30 min",
+    "price": 1200,
+    "paymentType": "Pay on delivery",
+    "image": "https://images.pexels.com/photos/3997991/pexels-photo-3997991.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "category": "Waxing"
+  },
+  {
+    "id": "Dreadlocks Retouch",
+    "name": "Dreadlocks Retouch",
+    "blurb": "Keep your dreads neat and fresh with our careful retouch service, maintaining healthy roots and a tidy look.",
+    "duration": "90 min",
+    "price": 500,
+    "paymentType": "Pay on delivery",
+    "image": "https://i.postimg.cc/DyySWSpT/af1297ce-5345-4ed5-b050-e1302b79b70d.jpg",
+    "category": "Dreadlocks"
+  },
+  {
+    "id": "dreadlocks-installation",
+    "name": "Dreadlocks Installation",
+    "blurb": "Professional dreadlock creation and initial styling.",
+    "duration": "60 min",
+    "price": 600,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/TYsJZ5m4/301cba46-c755-4ff5-9009-52ba13b30d93.jpg",
+    "category": "Dreadlocks"
+  },
+  {
+    "id": "Marley Braids",
+    "name": "Marley Braids",
+    "blurb": "Beautiful, textured braids perfect for protective styling while giving you a natural, Afro-inspired look.",
+    "duration": "140 min",
+    "price": 1800,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/dty5tcs3/MARLEY-BRAIDS-ON-SALE-Ready-to-rock-that-natural-textured-look-Our-soft-fluffy-lightweight-Mar.jpg",
+    "category": "Dreadlocks"
+  },
+  {
+    "id": "French Curls",
+    "name": "French Curlst",
+    "blurb": "Soft, flowing curls with a luxurious touch, perfect for everyday elegance or special occasions.",
+    "duration": "60 min",
+    "price": 1500,
+    "paymentType": "50% deposit",
+    "image": "https://i.postimg.cc/Y9Nmy8Mh/ab51f98d-17af-42c8-b795-ebb4fbbe17a4.jpg",
+    "category": "Microblading"
+  
+  }
+]

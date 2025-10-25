@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Categories - Spike Salon Barbershop & Spa</title>
+    <meta name="description" content="Browse our service categories including barbershop, salon, nails, spa treatments, and specialized beauty services.">
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo">
+                    <span class="nav__logo-text">SPIKE SALON</span>
+                    <span class="nav__logo-tagline">Barbershop & Spa</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="packages.html" class="nav__link">Packages</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="faq.html" class="nav__link">FAQs</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav__actions">
+                <a href="contact.html" class="btn btn--primary">Book Now</a>
+                <button class="nav__toggle" id="nav-toggle">
+                    <span class="nav__toggle-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <h1 class="page-header__title">Service Categories</h1>
+                    <p class="page-header__subtitle">Explore our comprehensive range of beauty and grooming services</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories section">
+            <div class="container">
+                <div class="categories-grid" id="categories-grid">
+                    <!-- Categories will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <!-- Footer content will be loaded by JavaScript -->
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5,12 12,5 19,12"></polyline>
+        </svg>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                const services = await window.DataLoader.getServices();
+                const categories = [...new Set(services.map(service => service.category))];
+                
+                const categoryDescriptions = {
+                    'Barbershop': 'Traditional and modern barbering services for men',
+                    'Hairdressing': 'Professional hair care and styling services',
+                    'Nails': 'Complete nail care and beautification services',
+                    'Microblading': 'Semi-permanent eyebrow enhancement',
+                    'Eyelash Extensions': 'Beautiful lash enhancement services',
+                    'Wigging': 'Professional wig services and maintenance',
+                    'Facials': 'Skin care and facial treatments',
+                    'Waxing': 'Professional hair removal services',
+                    'Massage': 'Therapeutic and relaxation massage services',
+                    'Dreadlocks': 'Dreadlock creation and maintenance',
+                    'Steaming': 'Relaxing steam treatments and therapy'
+                };
+
+                const categoryIcons = {
+                    'Barbershop': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>`,
+                    'Hairdressing': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>`,
+                    'Nails': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>`,
+                    'Microblading': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>`,
+                    'Eyelash Extensions': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>`,
+                    'Wigging': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>`,
+                    'Facials': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>`,
+                    'Waxing': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 12l2 2 4-4"></path>
+                        <path d="M21 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
+                        <path d="M3 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
+                        <path d="M12 21c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
+                        <path d="M12 3c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"></path>
+                    </svg>`,
+                    'Massage': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>`,
+                    'Dreadlocks': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>`,
+                    'Steaming': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>`
+                };
+
+                const categoriesGrid = document.getElementById('categories-grid');
+                
+                let categoriesHTML = '';
+                categories.forEach(category => {
+                    const categoryServices = services.filter(service => service.category === category);
+                    const serviceCount = categoryServices.length;
+                    const priceRange = categoryServices.length > 0 ? 
+                        `KSH ${Math.min(...categoryServices.map(s => s.price)).toLocaleString()} - ${Math.max(...categoryServices.map(s => s.price)).toLocaleString()}` : 
+                        'Contact for pricing';
+
+                    categoriesHTML += `
+                        <div class="category-card">
+                            <div class="category-card__icon">
+                                ${categoryIcons[category] || categoryIcons['Facials']}
+                            </div>
+                            <div class="category-card__content">
+                                <h3 class="category-card__title">${category}</h3>
+                                <p class="category-card__description">${categoryDescriptions[category] || 'Professional beauty services'}</p>
+                                <div class="category-card__meta">
+                                    <span class="category-card__count">${serviceCount} service${serviceCount !== 1 ? 's' : ''}</span>
+                                    <span class="category-card__price">${priceRange}</span>
+                                </div>
+                                <a href="services.html#${category.toLowerCase().replace(/\s+/g, '-')}" class="btn btn--primary">View Services</a>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                categoriesGrid.innerHTML = categoriesHTML;
+
+            } catch (error) {
+                console.error('Error loading categories:', error);
+                document.getElementById('categories-grid').innerHTML = UIComponents.generateErrorMessage(
+                    'Unable to load service categories. Please try again later.',
+                    true
+                );
+            }
+        });
+    </script>
+
+    <style>
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .category-card {
+            background: var(--brand-light);
+            border-radius: var(--rounded-2xl);
+            padding: var(--space-8);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-gray-200);
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .category-card__icon {
+            width: 80px;
+            height: 80px;
+            background: var(--brand-accent);
+            border-radius: var(--rounded-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-6);
+            color: var(--brand-primary);
+        }
+
+        .category-card__icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .category-card__title {
+            font-size: var(--text-2xl);
+            font-weight: var(--font-bold);
+            margin-bottom: var(--space-3);
+            color: var(--brand-dark);
+        }
+
+        .category-card__description {
+            color: var(--color-gray-600);
+            margin-bottom: var(--space-6);
+            line-height: var(--leading-relaxed);
+        }
+
+        .category-card__meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-6);
+            font-size: var(--text-sm);
+            color: var(--color-gray-600);
+        }
+
+        .category-card__count {
+            font-weight: var(--font-medium);
+        }
+
+        .category-card__price {
+            font-weight: var(--font-medium);
+            color: var(--brand-primary);
+        }
+
+        @media (max-width: 768px) {
+            .category-card {
+                padding: var(--space-6);
+            }
+
+            .category-card__icon {
+                width: 64px;
+                height: 64px;
+            }
+
+            .category-card__icon svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .category-card__meta {
+                flex-direction: column;
+                gap: var(--space-2);
+                text-align: center;
+            }
+        }
+    </style>
+</body>
+</html>
