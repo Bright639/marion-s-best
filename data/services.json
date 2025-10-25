@@ -232,17 +232,6 @@
     "image": "https://i.postimg.cc/q72HLGDk/Deep-Cleansing-Facial-for-Glowing-Skin-Luxury-Skincare-Experience.jpg",
     "category": "Facials"
   },
-
-  {
-    "id": "facial-waxing",
-    "name": "Facial Waxing",
-    "blurb": "Gentle hair removal for eyebrows, upper lip, and facial areas.",
-    "duration": "30 min",
-    "price": 1200,
-    "paymentType": "Pay on delivery",
-    "image": "https://images.pexels.com/photos/3997991/pexels-photo-3997991.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "category": "Waxing"
-  },
   {
     "id": "Dreadlocks Retouch",
     "name": "Dreadlocks Retouch",
